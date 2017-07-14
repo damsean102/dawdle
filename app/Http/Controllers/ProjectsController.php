@@ -20,6 +20,12 @@ class ProjectsController extends Controller
 				return view('projects.index', compact('projects'));
     }
 
+    public function redirect()
+    {
+        //
+				return redirect('/');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -28,6 +34,7 @@ class ProjectsController extends Controller
     public function create()
     {
         //
+        return view('projects.create');
     }
 
     /**
@@ -39,6 +46,15 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
         //
+				// dd(request()->all());
+
+				$this->validate(request(), [
+					'title' => 'required|min:2',
+				]);
+
+				Project::create(request(['title']));
+
+				return redirect('/');
     }
 
     /**
@@ -50,7 +66,7 @@ class ProjectsController extends Controller
     public function show(Project $project)
     {
         //
-				return view('projects.show', compact('project'));
+		return view('projects.show', compact('project'));
     }
 
     /**

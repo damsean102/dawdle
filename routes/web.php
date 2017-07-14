@@ -12,5 +12,11 @@
 */
 
 Route::get('/', 'ProjectsController@index');
-Route::get('/projects/{project}', 'ProjectsController@show');
+Route::get('/projects', 'ProjectsController@redirect');
 Route::get('/projects/create', 'ProjectsController@create');
+
+// This needs to be after any porjects/* get requests ans it will overwrite them
+Route::get('/projects/{project}', 'ProjectsController@show');
+
+Route::post('/projects', 'ProjectsController@store');
+

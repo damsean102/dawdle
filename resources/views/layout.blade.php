@@ -11,8 +11,15 @@
 
 </head>
 <body>
-	<h1>Dawdle</h1>
 
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				<h1>Dawdle</h1>
+			</div>
+		</div>
+	</div>
+	
 	<main class="container">
 		@yield('content')
 	</main>
