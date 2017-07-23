@@ -3,10 +3,9 @@
 
 @section('content')
 	<section class="column">
-		<h2>List of Tasks</h2>
-
-		<p></p>
-
+		<h1>{{$project->title}}</h1>
+		<p>{{$project->description}}</p>
+		<p>List Tasks Here</p>
 		<hr>
 		@include('partials.errors')
 		<form method="POST" action="/tasks">

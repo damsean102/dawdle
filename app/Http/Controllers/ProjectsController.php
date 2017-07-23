@@ -52,7 +52,7 @@ class ProjectsController extends Controller
 					'title' => 'required|min:2',
 				]);
 
-				Project::create(request(['title']));
+				Project::create(request(['title', 'description']));
 
 				return redirect('/');
     }
